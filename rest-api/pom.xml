@@ -11,6 +11,7 @@
 
     <properties>
         <spring.version>4.1.1.RELEASE</spring.version>
+        <slf4j.version>1.5.10</slf4j.version>
     </properties>
 
     <dependencies>
@@ -81,6 +82,23 @@
         </dependency>
 
         <!-- logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
 
     </dependencies>
 
@@ -118,6 +136,8 @@
                         <host>localhost</host>
                     </httpConnector>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <stopKey>ctrl+d</stopKey>
+                    <stopPort/>
                 </configuration>
             </plugin>
         </plugins>
